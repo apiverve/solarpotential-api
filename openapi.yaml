@@ -1,39 +1,45 @@
 openapi: 3.0.4
 info:
   title: Solar Potential
-  description: Solar Potential is a simple tool for getting the estimated annual energy production of a PV system. It returns the estimated annual energy production of a PV system.
+  description: >-
+    Solar Potential is a simple tool for getting the estimated annual energy
+    production of a PV system. It returns the estimated annual energy production
+    of a PV system.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/solarpotential:
     get:
       summary: Get Solar Potential Data
-      description: Solar Potential is a simple tool for getting the estimated annual energy production of a PV system. It returns the estimated annual energy production of a PV system.
+      description: >-
+        Solar Potential is a simple tool for getting the estimated annual energy
+        production of a PV system. It returns the estimated annual energy
+        production of a PV system.
       operationId: solarpotential
       parameters:
-      - name: lat
-        in: query
-        schema:
-          type: number
-        required: true
-        description: The latitude of the location to get the estimated annual energy production of a PV system for
-        example: '37.7749'
-      - name: lon
-        in: query
-        schema:
-          type: number
-        required: true
-        description: The longitude of the location to get the estimated annual energy production of a PV system for
-        example: '-122.4194'
+        - name: lat
+          in: query
+          schema:
+            type: number
+          required: true
+          description: The latitude of the location
+          example: 37.7749
+        - name: lon
+          in: query
+          schema:
+            type: number
+          required: true
+          description: The longitude of the location
+          example: -122.4194
       responses:
         '200':
           description: Successful Response
@@ -49,11 +55,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   coordinates:
                     latitude: 37.7749
@@ -64,13 +70,17 @@ paths:
                     adjustedYearlyUsableSunlightHours: 1557
                   bestDirection: South
                   cloudFactor: 0.35
-                  disclaimer: This is a rough estimate based on coordinates and general climate patterns. For precise solar potential, consider local weather patterns, obstructions, and professional assessments.
+                  disclaimer: >-
+                    This is a rough estimate based on coordinates and general
+                    climate patterns. For precise solar potential, consider
+                    local weather patterns, obstructions, and professional
+                    assessments.
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -78,4 +88,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
