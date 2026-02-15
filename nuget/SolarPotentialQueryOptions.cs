@@ -11,15 +11,13 @@ namespace APIVerve.API.SolarPotential
     public class SolarPotentialQueryOptions
     {
         /// <summary>
-        /// The latitude of the location to get the estimated annual energy production of a PV system for
-        /// Example: 37.7749
+        /// The latitude of the location
         /// </summary>
         [JsonProperty("lat")]
         public string Lat { get; set; }
 
         /// <summary>
-        /// The longitude of the location to get the estimated annual energy production of a PV system for
-        /// Example: -122.4194
+        /// The longitude of the location
         /// </summary>
         [JsonProperty("lon")]
         public string Lon { get; set; }
