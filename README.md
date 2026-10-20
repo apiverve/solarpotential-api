@@ -1,13 +1,13 @@
-# [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Solar Potential is a simple tool for getting the estimated annual energy production of a PV system. It returns the estimated annual energy production of a PV system.
+Solar Potential calculates solar energy potential for any latitude and longitude coordinates. It returns average daily usable sunlight hours and optimal panel orientation, with paid plans adding yearly totals and cloud factors.
 
 The Solar Potential API provides a simple, reliable way to integrate solar potential functionality into your applications. Built for developers who need production-ready solar potential capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -162,7 +162,7 @@ go get github.com/apiverve/solarpotential-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/solarpotential](https://docs.apiverve.com/ref/solarpotential)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -192,11 +192,39 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Solar Potential API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "coordinates": {
+      "latitude": 37.7749,
+      "longitude": -122.4194
+    },
+    "usableHours": {
+      "avgDailyUsableSunlightHours": 12.19,
+      "yearlyUsableSunlightHoursRaw": 4448,
+      "adjustedYearlyUsableSunlightHours": 1557
+    },
+    "bestDirection": "South",
+    "cloudFactor": 0.35,
+    "disclaimer": "This is a rough estimate based on coordinates and general climate patterns. For precise solar potential, consider local weather patterns, obstructions, and professional assessments."
+  }
 }
 ```
 
@@ -204,7 +232,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Solar Potential API](https://apiverve.com/marketplace/solarpotential?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)

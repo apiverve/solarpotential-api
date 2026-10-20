@@ -2,9 +2,10 @@ openapi: 3.0.4
 info:
   title: Solar Potential
   description: >-
-    Solar Potential is a simple tool for getting the estimated annual energy
-    production of a PV system. It returns the estimated annual energy production
-    of a PV system.
+    Solar Potential calculates solar energy potential for any latitude and
+    longitude coordinates. It returns average daily usable sunlight hours and
+    optimal panel orientation, with paid plans adding yearly totals and cloud
+    factors.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +20,7 @@ servers:
 paths:
   /v1/solarpotential:
     get:
-      summary: Get Solar Potential Data
+      summary: Solar Potential
       description: >-
         Solar Potential is a simple tool for getting the estimated annual energy
         production of a PV system. It returns the estimated annual energy
