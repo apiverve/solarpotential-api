@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/solarpotential",
-  "version": "1.2.0",
-  "description": "Solar Potential is a simple tool for getting the estimated annual energy production of a PV system. It returns the estimated annual energy production of a PV system.",
+  "version": "1.2.2",
+  "description": "Solar Potential calculates solar energy potential for any latitude and longitude coordinates. It returns average daily usable sunlight hours and optimal panel orientation, with paid plans adding yearly totals and cloud factors.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "solar potential", "solar potential api", "solar potential tool", "solar potential software", "solar potential service"
+    "solar potential api", "solar radiation lookup", "pv yield estimation", "calculate sunlight hours", "optimal solar panel direction"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/solarpotential-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/solarpotential?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/solarpotential?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
