@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/solarpotential",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Solar Potential calculates solar energy potential for any latitude and longitude coordinates. It returns average daily usable sunlight hours and optimal panel orientation, with paid plans adding yearly totals and cloud factors.",
   "main": "index.js",
   "types": "index.d.ts",
